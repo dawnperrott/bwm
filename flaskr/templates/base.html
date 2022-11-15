@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+  <title>{% block title %}{% endblock %} - BWM</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<nav class="navbar bg-light">
+  <div class="container-fluid ">
+      <div class="px-3">
+          <img class="" src="{{url_for('static', filename='logo.png')}}" height="75" width="25" />
+          <a class="navbar-brand mb-0 h1"> Beer with me</a>
+      </div>
+    <div class="d-flex" role="search">
+      <input class="form-control form-control-sm" type="search"  placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-dark" type="submit">Search</button>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">bwm</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+               {% if g.user %}
+              <span>{{ g.user['username'] }}</span>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{ url_for('auth.logout') }}">Logout</a>
+              </li>
+               {% else %}
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('auth.register') }}">Register</a>
+              </li>
+               <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('auth.login') }}">Login</a>
+              </li>
+               {% endif %}
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('blog.pubpage') }}">Pubs</a>
+              </li>
+               <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('blog.index') }}">Beers</a>
+              </li>
+                <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('blog.limerick') }}">Map</a>
+              </li>
+               <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('blog.contact') }}">Contact us</a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+    </div>
+  </div>
+</nav>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+</body>
+
+<section class="content">
+  <header>
+    {% block header %}{% endblock %}
+  </header>
+  {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+  {% block content %}{% endblock %}
+</section>
+</html>
