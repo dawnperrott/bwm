@@ -56,3 +56,12 @@ footer{
   min-height:350px;
   background:black;
 }
+/* Set the size of the div element that contains the map */
+#map {
+  margin-left: auto;
+  margin-right: auto;
+  height: 500px;
+  /* The height is 400 pixels */
+  width: 90%;
+  /* The width is the width of the web page */
+}

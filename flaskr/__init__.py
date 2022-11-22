@@ -37,6 +37,9 @@ def create_app(test_config=None):
     def contact():
         return render_template('contact.html')
 
+    from . import searchbar
+    app.register_blueprint(searchbar.bp)
+
     from . import db
     db.init_app(app)
 
