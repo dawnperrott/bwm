@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 
 {% block header %}
-  <h1>{% block title %}New Review{% endblock %}</h1>
+  </br>
+  <h1 class="text-center">{% block title %}New Review{% endblock %}</h1>
 {% endblock %}
-
 {% block content %}
-  <form method="post">
+</br>
+  <form class="text-center" method="post">
     <label for="title">Title</label>
     <input name="title" id="title" value="{{ request.form['title'] }}" required>
     <label for="body">Body</label>

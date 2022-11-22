@@ -3,6 +3,11 @@ import functools
 from flask import (
     Blueprint, flash, g, redirect, render_template, request, session, url_for
 )
+from flask_validation_extended import Validator
+from flask_validation_extended.params import Route, Json, Query
+from flask_validation_extended.types import List
+from flask_validation_extended.rules import MinLen, Min, Max, IsoDatetime
+
 from werkzeug.security import check_password_hash, generate_password_hash
 
 from flaskr.db import get_db
@@ -10,8 +15,17 @@ from flaskr.db import get_db
 bp = Blueprint('auth', __name__, url_prefix='/auth')
 
 
+# @bp.route("/register", methods=["POST"])
+# @Validator()
+# def validate_reg(
+#        age=Json(int, rules=[Min(18), Max(100)]),
+#       birthday=Json(str, rules=IsoDatetime())):
+#       return "Update Complete! %s" % locals()
+
+
 @bp.route('/register', methods=('GET', 'POST'))
 def register():
+
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']

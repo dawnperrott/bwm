@@ -9,15 +9,15 @@ from flaskr.db import get_db
 bp = Blueprint('blog', __name__)
 
 
-@bp.route('/')
-def index():
+@bp.route('/beverage')
+def beverage():
     db = get_db()
     posts = db.execute(
         'SELECT p.id, title, body, created, author_id, username'
         ' FROM post p JOIN user u ON p.author_id = u.id'
         ' ORDER BY created DESC'
     ).fetchall()
-    return render_template('blog/index.html', posts=posts)
+    return render_template('blog/beverage.html', posts=posts)
 
 
 @bp.route('/create', methods=('GET', 'POST'))
@@ -41,7 +41,7 @@ def create():
                 (title, body, g.user['id'])
             )
             db.commit()
-            return redirect(url_for('blog.index'))
+            return redirect(url_for('blog.beverage'))
 
     return render_template('blog/create.html')
 
@@ -86,7 +86,7 @@ def update(id):
                 (title, body, id)
             )
             db.commit()
-            return redirect(url_for('blog.index'))
+            return redirect(url_for('blog.beverage'))
 
     return render_template('blog/update.html', post=post)
 
@@ -98,24 +98,11 @@ def delete(id):
     db = get_db()
     db.execute('DELETE FROM post WHERE id = ?', (id,))
     db.commit()
-    return redirect(url_for('blog.index'))
+    return redirect(url_for('blog.beverage'))
 
 
-@bp.route('/pubpage')
-def pubpage():
-    return render_template("pubpage.html")
 
 
-@bp.route('/beerpage')
-def beerpage():
-    return render_template("beerpage.html")
 
 
-@bp.route('/contact')
-def contact():
-    return render_template("contact.html")
 
-
-@bp.route('/limerick')
-def limerick():
-    return render_template("limerick.html")
