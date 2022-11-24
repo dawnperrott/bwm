@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  </br>
+  <h1 class="text-center">{% block title %}Lets Create Your Account!{% endblock %}</h1>
+{% endblock %}
+{% block content %}
+  </br>
+  </br>
+  <form class="text-center"  method="post">
+    <label for="username">Username:</label>
+    <input name="username" id="username" required>
+    </br></br>
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password" required>
+    </br></br>
+    <label for="birthday">Date of Birth:</label>
+    <input type="date" id="birthday" name="birthday">
+    </br></br>
+    <div class="form-text">Only over 18's can make an account!</div>
+    </br>
+    <input class="btn btn-outline-dark" type="submit" value="Register">
+  </form>
+
+{% endblock %}

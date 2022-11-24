@@ -1,0 +1,250 @@
+{% extends 'base.html' %}
+{% block header %}
+  </br>
+  <h1 class="text-center">{% block title %}{% endblock %}</h1>
+  </br>
+<html>
+  <head>
+      <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}"/>
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+  </head>
+  <body>
+  <section id="tc"></section>
+  <p><img class="pub-blurb" src="{{url_for('static', filename='images/treatycity.png')}}" width="450" height="450"></p>
+      <h2 class="m-3 p-2">Treaty City</h2>
+          <p class="m-3 p-2">Treaty City Brewery started in a small two bedroomed apartment in East Vancouver Canada.
+            After a long night of general debauchery, plenty of merriment and many bottles of bland tasteless beer, we decided enough was enough.
+            Something had to be done. Life was too short to drink bad beer.
+            The next morning, while nursing a spectacular hangover we headed for the local homebrew store and purchased our very first brewing equipment.
+          </p>
+          <p class="m-3 p-2">
+            With the new addition to the family and our own Clan so far away we duly set our sights on the emerald Isle.
+            With a quick hop and a skip we were back in the Treaty City and ready for action.
+            Treaty City Brewery was incorporated, labels were created, designs and reviews of everything from bottle caps to t-shirts.
+            Stephen set to work, diligently tasting as many beers as he could (It was very hard work) and building the recipes for the iconic beers that are on the shelves today.
+         <p class="m-5 p-1" >
+             <b>Address:</b> Medieval Quarter, 24 & 25 Nicholas St, Limerick, V94 EH57<br><br>
+             <b>Opening hours:</b> Mon Closed &nbsp;&nbsp;&nbsp;Tues Closed&nbsp;&nbsp;&nbsp;Wed Closed&nbsp;&nbsp;&nbsp;Thurs 4–9:30p.m.&nbsp;&nbsp;&nbsp;Fri 4–9:30p.m.&nbsp;&nbsp;&nbsp;Sat 12–9:30p.m.&nbsp;&nbsp;&nbsp;Sun 4–9:30p.m.
+                &nbsp;&nbsp;&nbsp;<br><br>
+             <b>Star Rating:</b>
+             <span class="fa fa-star checked"></span>
+             <span class="fa fa-star checked"></span>
+             <span class="fa fa-star checked"></span>
+             <span class="fa fa-star checked"></span>
+             <span class="fa fa-star checked"></span>
+         </p>
+        <div class="m-5 p-5"><h5 class="text-center" >Treaty City Favourites!</h5></br>
+            <div class="card-group">
+              <div class="card" >
+                <img class="card-img-top" src="{{url_for('static', filename='images/ec.jpeg')}}" alt="Card image cap">
+                <div class="text-center"><br>
+                  <a href="{{ url_for('blog.beverage',_anchor='ec') }}" class="w3-button w3-yellow">Ecstatic Citrus</a>
+
+                </div><br>
+              </div>
+               <div class="card" >
+                <img class="card-img-top" src="{{url_for('static', filename='images/dd.jpeg')}}" alt="Card image cap">
+                <div class="text-center"><br>
+                  <a  href="{{ url_for('blog.beverage',_anchor='dd') }}" class="w3-button w3-indigo">Dark Drizzle</a>
+                </div><br>
+              </div>
+               <div class="card">
+                <img class="card-img-top" src="{{url_for('static', filename='images/ld.jpeg')}}" alt="Card image cap">
+                <div class="text-center"><br>
+                  <a href="{{ url_for('blog.beverage',_anchor='ld') }}" class="w3-button w3-pink">Lucid Daydream</a>
+
+                </div><br>
+              </div>
+            </div>
+          </div>
+        </br>
+        </br>
+      </br>
+   </br>
+  <p><img class="pub-blurb" src="{{url_for('static', filename='images/sextons.jpeg')}}" width="450" height="450"></p>
+              <h2 class="m-3 p-2">Sexton's Bar & Pizza Garden</h2>
+                  <p class="m-3 p-2">
+                      Sextons is the home of Limericks first outdoor wood fired pizza oven, the Pizza bar is located in the heart of Limerick at 91 Henry Street.
+                      We have a range of Board Games available for entertainment at Sextons. Brilliant for groups (or just keeping the kids entertained!).We have a Fabulous Pizza Garden at Sextons Pizza Bar! Now available for Functions. Contact us for bookings.
+                      Our ‘Pizza Garden’ is a great outdoor space, with an Inglenook fireplace, which is perfect for both winter and summer events.</p>
+                  <p class="m-3 p-2">
+                        Our delicious, thin base, wood-fired pizzas range from the classic Margherita to the more gourmet pizzas, which include vegetarian, gluten friendly and vegan options. If nothing
+                        on the menu grabs your attention, you can create your own by choosing all your own toppings. You can pair your pizza of choice with a coffee, a glass of one of the many
+                        different Spanish or Italian wines available or a locally sourced craft beer.
+                  </p><section id="s"></section>
+                 <p class="m-4 p-1" >
+                     <b >Address:</b> 91 Henry St, Limerick, Ireland, V94 CA29<br><br>
+                     <b>Opening hours:</b> Mon Closed &nbsp;&nbsp;&nbsp;Tues Closed&nbsp;&nbsp;&nbsp;Wed Closed&nbsp;&nbsp;&nbsp;Thurs 4–9:30p.m.&nbsp;&nbsp;&nbsp;Fri 4–9:30p.m.&nbsp;&nbsp;&nbsp;Sat 12–9:30p.m.&nbsp;&nbsp;&nbsp;Sun 4–9:30p.m.
+                        &nbsp;&nbsp;&nbsp;<br><br>
+                     <b>Star Rating:</b>
+                     <span class="fa fa-star checked"></span>
+                     <span class="fa fa-star checked"></span>
+                     <span class="fa fa-star checked"></span>
+                     <span class="fa fa-star checked"></span>
+                     <span class="fa fa-star-half-full"></span>
+                 </p>
+                <div class="m-5 p-5"><h5 class="text-center" >Sextons Favourites!</h5></br>
+                    <div class="card-group">
+                      <div class="card" >
+                        <img class="card-img-top" src="{{url_for('static', filename='images/mdh.jpeg')}}" alt="Card image cap">
+                        <div class="text-center"><br>
+                            <a href="{{ url_for('blog.beverage',_anchor='mdh') }}" class="w3-button w3-deep-orange">Mosaic Dry Hopped</a>
+                        </div><br>
+                      </div>
+                       <div class="card" >
+                        <img class="card-img-top" src="{{url_for('static', filename='images/df.jpeg')}}" alt="Card image cap">
+                        <div class="text-center"><br>
+                          <a href="{{ url_for('blog.beverage',_anchor='df') }}" class="btn btn-outline-primary">Double Foggy</a>
+                        </div><br>
+                      </div>
+                       <div class="card">
+                        <img class="card-img-top" src="{{url_for('static', filename='images/eh.jpeg')}}" alt="Card image cap">
+                        <div class="text-center"><br>
+                          <a href="{{ url_for('blog.beverage',_anchor='eh') }}" class="btn btn-dark">Enchanted Hallucination</a>
+                        </div><br>
+                      </div>
+                    </div>
+                  </div>
+            </br>
+        </br>
+      </br>
+   </br>
+  <p><img class="pub-blurb" src="{{url_for('static', filename='images/commercialrr.jpeg')}}" width="450" height="450"></p>
+      <h2 class="m-3 p-2">The Commercial</h2>
+          <p class="m-3 p-1">
+             Set in the heart of Georgian Limerick this sensitively restored, redecorated and refurbished historic 1800's landmark building and renowned family run hotel, reopened its doors as a bar and live music venue to serve its cities dwellers and visitors into the late hours once again.
+              The warm atmosphere of this place makes visitors feel relaxed and have a nice time. The friendly staff welcomes people all year round. Good service is something clients like here. The fine decor is suitable for the interior of this spot. Google users assigned the score of 4.6 to this bar
+          </p>
+            <p class="m-3 p-1" >
+             <b>Wheelchair Accessible:</b> &nbsp;&nbsp;&nbsp;  &#9855;<br><br>
+             <b>Address:</b>  46-47 Catherine St, Limerick, V94 T2V3<br><br>
+             <b>Opening hours:</b> Mon 11a.m.–12:29a.m. &nbsp;&nbsp;&nbsp;Tues 11a.m.–12:29a.m.&nbsp;&nbsp;&nbsp;Wed 11a.m.–12:29a.m.&nbsp;&nbsp;&nbsp;Thurs 11a.m.–12:29a.m.&nbsp;&nbsp;&nbsp;Fri 11a.m.–12:29a.m.&nbsp;&nbsp;&nbsp;Sat 11a.m.–12:29a.m.&nbsp;&nbsp;&nbsp;Sun 11a.m.–12:29a.m.
+                &nbsp;&nbsp;&nbsp;<br><section id="crr"></section>
+             <b>Star Rating:</b>
+             <span class="fa fa-star checked"></span>
+             <span class="fa fa-star checked"></span>
+             <span class="fa fa-star checked"></span>
+             <span class="fa fa-star checked"></span>
+             <span class="fa fa-star-half-full"></span>
+             <br>
+        </p>
+    </br>
+        <div class="m-5 p-5"><h5 class="text-center" >The Commercial Favourites!</h5></br>
+            <div class="card-group">
+              <div class="card" >
+                <img class="card-img-top" src="{{url_for('static', filename='images/ld.jpeg')}}" alt="Card image cap">
+                <div class="text-center"><br>
+                  <a href="{{ url_for('blog.beverage',_anchor='ld') }}" class="w3-button w3-pink">Lucid Daydream</a>
+                </div><br>
+              </div>
+               <div class="card" >
+                <img class="card-img-top" src="{{url_for('static', filename='images/dd.jpeg')}}" alt="Card image cap">
+                <div class="text-center"><br>
+                  <a href="{{ url_for('blog.beverage',_anchor='dd') }}" class="w3-button w3-indigo">Dark Drizzle</a>
+                </div><br>
+              </div>
+               <div class="card">
+                <img class="card-img-top" src="{{url_for('static', filename='images/ec.jpeg')}}" alt="Card image cap">
+                <div class="text-center"><br>
+                  <a href="{{ url_for('blog.beverage',_anchor='ec') }}" class="w3-button w3-yellow">Ecstatic Citrus</a>
+                </div><br>
+              </div>
+            </div>
+          </div>
+            </br>
+        </br>
+      </br>
+   </br>
+  <p><img class="pub-blurb" src="{{url_for('static', filename='images/crew.jpeg')}}" width="450" height="450"></p>
+      <h2 class="m-3 p-2">Crew Brewing Co.</h2>
+          <p class="m-3 p-2">We brew our own beer on site at the back of the pub and serve it directly from tanks behind the bar. We believe that great beer is best enjoyed fresh and that nothing beats the experience of a flavourful beer direct from the tank at the brewery. Pop in on the right day and you might find the bar filled with the smell of malt and see our staff brewing through our brewery windows while you enjoy your pint.
+              We produce a huge range of styles from the classics to the highly experimental brews, all in small batches with a focus on producing flavourful, quality, highly drinkable craft beer. All of our beers are original creations by our team led by Master Brewer Jono. Through the year we’ll produce over 50 different beers as well as repeating some of our and our customer’s favourites so feel free to let us know what you’d like to see us brew again!</p>
+          <p class="m-3 p-2">
+             We’re excited to share our love of fresh, local beer with you. We’re proud to be a small independent business, a living wage employer, a sustainability focused business and a positive contributor to our community.
+
+         <p class="m-4 p-1" >
+             <b >Address:</b> 35 Thomas St, Limerick, V94 A5X4<br><br>
+             <b>Opening hours:</b> Mon 1–11p.m &nbsp;&nbsp;&nbsp;Tues 1–11p.m&nbsp;&nbsp;&nbsp;Wed 1–11p.m&nbsp;&nbsp;&nbsp;Thurs 1–11p.m&nbsp;&nbsp;&nbsp;Fri 1–11p.m&nbsp;&nbsp;&nbsp;Sat 1–11p.m&nbsp;&nbsp;&nbsp;Sun 1–11p.m
+                &nbsp;&nbsp;&nbsp;<br><br>
+             <b>Star Rating:</b>
+             <span class="fa fa-star checked"></span>
+             <span class="fa fa-star checked"></span>
+             <span class="fa fa-star checked"></span>
+             <span class="fa fa-star checked"></span>
+             <span class=" empty" >&nbsp;&nbsp;&nbsp;☆</span>
+             <br></p>
+         </p>
+        <div class="m-5 p-5"><h5 class="text-center" >Crew Brewery Favourites!</h5></br>
+            <div class="card-group">
+              <div class="card">
+                <img class="card-img-top" src="{{url_for('static', filename='images/mdh.jpeg')}}" alt="Card image cap">
+                <div class="text-center"><br>
+                  <a href="{{ url_for('blog.beverage',_anchor='mdh') }}" class="w3-button w3-lime"> Mosaic Dry Hopped </a><section id="c"></section>
+                </div><br>
+              </div>
+               <div class="card">
+                <img class="card-img-top" src="{{url_for('static', filename='images/mw.jpeg')}}" alt="Card image cap">
+                <div class="text-center"><br>
+                  <a href="{{ url_for('blog.beverage',_anchor='mw') }}" class="btn btn-outline-danger">Murk Wisp</a>
+                </div><br>
+              </div>
+               <div class="card">
+                <img class="card-img-top" src="{{url_for('static', filename='images/df.jpeg')}}" alt="Card image cap">
+                <div class="text-center"><br>
+                  <a href="{{ url_for('blog.beverage',_anchor='df') }}" class="btn btn-primary">Double Foggy</a>
+                </div><br>
+              </div>
+            </div>
+          </div>
+            </br>
+        </br>
+      </br>
+   </br>
+  <p><img class="pub-blurb" src="{{url_for('static', filename='images/twh.jpg')}}" width="450" height="450"></p>
+      <h2 class="m-3 p-2">The White House</h2>
+          <p class="m-3 p-2">
+             Established in 1812 and situated in the professional and business heart of Limerick City the White
+              House Bar is as famous for its connections with the local literary arts as it is for the heritage of the bar itself.
+              Once the 10 year host of the White House Poets led by the larger than life and sadly missed
+              Mr Barney Sheehan it is again beginning to reconnect with these roots whilst
+              maintaining the high standards demanded of the traditional Irish pub.
+              Simply put, the White House is where the art of conversation is held highest and “The Weather,
+              Traffic & Sports” are debated in ways not often heard.</p><section id="twh"></section>
+         <p class="m-5 p-1" >
+             <b>Food Delivery:</b> &nbsp;&nbsp;&nbsp; &#128666; <br><br>
+             <b>Address:</b>  52 O'Connell St, Limerick, V94 NYH9<br><br>
+             <b>Opening hours:</b> Mon 2-11p.m. &nbsp;&nbsp;&nbsp;Tues 2-11p.m..&nbsp;&nbsp;&nbsp;Wed 2-11p.m.&nbsp;&nbsp;&nbsp;Thurs 2-11p.m.&nbsp;&nbsp;&nbsp;Fri 2-11p.m.&nbsp;&nbsp;&nbsp;Sat 2-11p.m.&nbsp;&nbsp;&nbsp;Sun 2-11p.m.
+                &nbsp;&nbsp;&nbsp;<br>
+             <b>Star Rating:</b>
+             <span class="fa fa-star checked"></span>
+             <span class="fa fa-star checked"></span>
+             <span class="fa fa-star checked"></span>
+             <span class=" empty" >&nbsp;&nbsp;&nbsp;☆</span>
+             <span class=" empty" >&nbsp;&nbsp;&nbsp;☆</span><br>
+         </p>
+
+      <div class="m-5 p-5"><h5 class="text-center" >The White House Favourites!</h5></br>
+                <div class="card-group">
+                  <div class="card">
+                    <img class="card-img-top" src="{{url_for('static', filename='images/cd.jpeg')}}" alt="Card image cap">
+                    <div class="text-center"><br>
+                      <a href="{{ url_for('blog.beverage',_anchor='cd') }}" class="w3-button w3-dark-grey">Curious Drop</a>
+                    </div><br>
+                  </div>
+                   <div class="card" >
+                    <img class="card-img-top" src="{{url_for('static', filename='images/eh.jpeg')}}" alt="Card image cap">
+                    <div class="text-center"><br>
+                      <a href="{{ url_for('blog.beverage',_anchor='eh') }}" class="btn btn-light">Enchanted Hallucination</a>
+                    </div><br>
+                  </div>
+                   <div class="card">
+                    <img class="card-img-top" src="{{url_for('static', filename='images/ec.jpeg')}}" alt="Card image cap">
+                    <div class="text-center"><br>
+                      <a href="{{ url_for('blog.beverage',_anchor='ec') }}" class="w3-button w3-yellow">Ecstatic Citrus</a>
+                    </div><br>
+                  </div>
+                </div>
+      </div>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block header %}
+  </br>
+  <h1 >{% block title %}Map of Limerick City {% endblock %}</h1><hr>
+{% endblock %}
+{% block content %}
+ </br>
+<html>
+  <head>
+      <title>Add Map</title>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+      <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}"/>
+      <script type="module" src="{{url_for('static', filename='js/script.js')}}"></script>
+  </head>
+  <body class="text-center">
+      <h3>The Pub Hubs</h3></br>
+      <!--The div element for the map -->
+      <div id="map"></div>
+
+        <div class="m-5 p-5 list-group">
+          <a href="{{ url_for('crawl.pubs',_anchor='twh') }}" class="list-group-item list-group-item-action list-group-item-warning">A: The White House</a>
+          <a href="{{ url_for('crawl.pubs',_anchor='c') }}"  class="list-group-item list-group-item-action list-group-item-primary">B: Crew Brewery</a>
+          <a href="{{ url_for('crawl.pubs',_anchor='crr') }}" class="list-group-item list-group-item-action list-group-item-danger">C: The Commercial</a>
+          <a href="{{ url_for('crawl.pubs',_anchor='s') }}" class="list-group-item list-group-item-action list-group-item-success">D: Sextons</a>
+          <a href="#" class="list-group-item list-group-item-action list-group-item-danger disabled">E: Tom Collins</a>
+          <a href="#" class="list-group-item list-group-item-action list-group-item-warning disabled">F: JJ Bowels</a>
+          <a href="#" class="list-group-item list-group-item-action list-group-item-info disabled">G: Locke</a>
+          <a href="#" class="list-group-item list-group-item-action list-group-item-light disabled">H: Charlie Malones </a>
+          <a href="{{ url_for('crawl.pubs',_anchor='tc') }}" class="list-group-item list-group-item-action list-group-item-info">I: Treaty City</a>
+        </div>
+      <!--
+       The `defer` attribute causes the callback to execute after the full HTML
+       document has been parsed. For non-blocking uses, avoiding race conditions,
+       and consistent behavior across browsers, consider loading using Promises
+       with https://www.npmjs.com/package/@googlemaps/js-api-loader.
+      -->
+      <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7f1WW6jqy0VvdiJF9AjLC9C0ykTeHusc&callback=initMap&v=weekly" defer></script>
+  </body>
+</html>
+{% endblock %}
+
+
+

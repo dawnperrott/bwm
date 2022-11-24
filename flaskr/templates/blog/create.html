@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  </br>
+  <h1 class="text-center">{% block title %}New Review{% endblock %}</h1>
+{% endblock %}
+{% block content %}
+</br>
+<div class=" m-5 p-5 container">
+
+  <form class="text-center" method="post">
+  <div class="dropdown">
+      <span class="input-group-addon">
+        <label  for="title">Choose beer:</label>
+        <select name="title" id="title" value="{{ request.form['title'] }}" required>
+           <option selected="selected" value="Double Foggy">Double Foggy</option>
+           <option value="Lucid Daydream">Lucid Daydream</option>
+           <option value="Murk Wisp">Murk Wisp</option>
+           <option value="Enchanted Hallucination">Enchanted Hallucination</option>
+           <option value="Mosaic Dry Hopped">Mosaic Dry Hopped</option>
+           <option value="Curious Drop">Curious Drop</option>
+           <option value="Dark Drizzle">Dark Drizzle</option>
+           <option value="Ecstatic Citrus">Ecstatic Citrus</option>
+        </select>
+      </span>
+
+<br><br><br>
+
+    <label for="body">Review of the beer:</label>
+    <textarea name="body" id="body" value="{{ request.form['body'] }}" required></textarea>
+    </br></br><br></div><!-- /input-group -->
+
+    <input class="btn btn-secondary" type="submit" value="Save">
+
+  </form>
+</div>
+{% endblock %}
