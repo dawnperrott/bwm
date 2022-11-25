@@ -1,9 +1,33 @@
 {% extends 'base.html' %}
 {% block header %}
   </br>
-  <h1 class="text-center">{% block title %} About Us {% endblock %}</h1><hr>
+<div
+    class="p-5 text-center bg-image"
+    style="
+      background-image: url({{ url_for('static', filename='images/temp.jpeg') }});
+      width: 100%;
+      height: 400px;
+      margin-top: 5px;
+      background-size: cover;
+    ">
+    <div>
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-white">
+          <h1 class="mb-3" id="homepage-bg">About Beer With Me</h1></br></br></br></br></br>
+          <a class="btn btn-light" href="{{ url_for('auth.register') }}" role="button">Register</a>
+          <a class="btn btn-light" href="{{ url_for('auth.login') }}" role="button">Login</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Background image -->
+</header>
+
+
+
 {% endblock %}
 {% block content %}
+
 <div class="m-5 p-2" style="font-size: 22px">
   <p>The Beer With Me application started in a small two bedroomed apartment in Limerick.
     Life was too short to drink mediocre beer. This application highlights the best of beer!
@@ -15,4 +39,5 @@
   <p>Our vision is to provide our users with the most comprehensive and useful pub application.
     We strive to connect pubs with their customers by creating new and easy to use communication channels.
     We believe that pubs play an important role within local communities; a meeting place where social networks are strengthened and extended, as well as hosting a wide variety of community oriented events and activities that add considerably to local civic life.</p>
-</div>{% endblock %}
+</div>
+{% endblock %}
