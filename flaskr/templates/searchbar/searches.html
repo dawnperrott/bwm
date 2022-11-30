@@ -1,17 +1,9 @@
 {% extends 'base.html' %}
 {% block header %}
   </br>
-  <h1 class="text-center">{% block title %} Search Pubs & Beers Here {% endblock %}</h1>
+  <h1 class="text-center">{% block title %} {% endblock %}</h1>
 {% endblock %}
 {% block content %}
-  </br>
-  </br>
-
-  <form class="text-center" method="post">
-    <input name="searched" id="searched" placeholder="Search the bar..." required></br></br>
-    <input class="btn btn-outline-dark" type="submit" value="submit">
-  </form>
-
   </br>
 {% if rows | length != 0%}
 <table class="text-center" style="width:100%" id="demo">

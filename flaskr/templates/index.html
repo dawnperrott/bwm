@@ -13,18 +13,19 @@
     <div>
       <div class="d-flex justify-content-center align-items-center h-100">
         <div class="text-white">
-          <h1 class="mb-3" id="homepage-bg">About Beer With Me</h1></br></br></br></br></br>
-          <a class="btn btn-light" href="{{ url_for('auth.register') }}" role="button">Register</a>
-          <a class="btn btn-light" href="{{ url_for('auth.login') }}" role="button">Login</a>
+          <h1 style="font-family: Times New Roman;font-size: 58px;" class="mb-3" id="homepage-bg">About&nbsp; Beer&nbsp; With &nbsp;Me</h1></br></br>
+           {% if g.user %}
+          <a class="btn btn-light btn-lg" href="{{ url_for('auth.logout') }}">Logout</a>
+           {% else %}
+          <a class="btn btn-light btn-lg" href="{{ url_for('auth.register') }}" role="button">Register</a>
+          <a class="btn btn-light btn-lg" href="{{ url_for('auth.login') }}" role="button">Login</a>
+           {% endif %}
         </div>
       </div>
     </div>
   </div>
   <!-- Background image -->
 </header>
-
-
-
 {% endblock %}
 {% block content %}
 
@@ -34,7 +35,7 @@
     There is a rich brewing history in Ireland it's engrained in us. It is our job to spread the word were pub hubs are.</p>
   <p>We offer comprehensive information on pubs in Limerick. Find the best venues, deals and events wherever you are, whenever you want. Search for venues by name or just browse for pubs close by on the interactive map. Looking for something to do?
     Beer With Me provides quick access to pub content including food and drink specials, happy hours, special events, trivia & poker nights.</p></br></br>
-    <h1 class="text-center">Who We Are</h1><hr>
+    <h1 class="text-center" style="font-family: Times New Roman;" >Who We Are</h1><hr>
   </br>
   <p>Our vision is to provide our users with the most comprehensive and useful pub application.
     We strive to connect pubs with their customers by creating new and easy to use communication channels.

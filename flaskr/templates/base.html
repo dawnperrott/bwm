@@ -1,18 +1,24 @@
 <!doctype html>
 <html>
     <head>
-      <title>{% block title %}{% endblock %} BWM</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-      <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <title>{% block title %}{% endblock %} BWM</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
     </head>
-    <body>
+    <body style="font-family: Times New Roman ; font-size:20px">
         <nav class="navbar bg-light">
           <div class="container-fluid ">
               <div class="px-3">
                   <a href ="{{ url_for('index') }}">
-                      <img class="" src="{{url_for('static', filename='logo.png')}}" height="75" width="25" /></a>
-                  <a href ="{{ url_for('index') }}" class="navbar-brand mb-0 h1"> Beer with me</a>
+                      <img class="" src="{{url_for('static', filename='logobwm.png')}}" height="60" width="260" alt="beer with me logo beside a beer bottle" /></a>
               </div>
+               <form  action="{{ url_for('searchbar.searches') }}" method="post">
+                   <input name="searched" id="searched" placeholder=" Search the bar ..." required>
+               <input  type="submit" value="Search">
+
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -48,14 +54,13 @@
                            <li class="nav-item">
                             <a class="nav-link" href="{{ url_for('contact') }}">Contact us</a>
                           </li>
-                            <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('searchbar.searches') }}">Search the Bar</a>
-                          </li>
+
                             <li class="nav-item">
                             <a class="nav-link" href="{{ url_for('index') }}">About Us</a>
                           </li>
                         </ul>
                       </div>
+                    </form>
                 </div>
           </div>
         </nav>
@@ -90,17 +95,15 @@
                 </section>
                 <!-- Section: Text -->
                 <section class="mb-4">
-                  <h5>Privacy Policy</h5>
-                  <p>
+                  <h5>Privacy Policy</h5><br>
+                  <p style="font-size: 15px;">
                     At Beer With Me , we are committed to ensuring your privacy is protected at all times.
                     We collect your personal information only with your permission and use it to allow access to the website.
-                    We will not share or sell any of this information to any third parties.
-                  </p>
+                    We will not share or sell any of this information to any third parties.</p>
                 </section>
                   <!-- Copyright -->
                   <div class="text-center p-3">
-                    © 2022 Copyright:
-                    <a class="text-white" href="">BeerWithMe.com</a>
+                    © 2022 Copyright
                   </div>
                   <!-- Copyright -->
                 </div>
